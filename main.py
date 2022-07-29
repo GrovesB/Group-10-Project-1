@@ -1,3 +1,4 @@
 # this is main.py for the granching and merging demo
-
-a=100
+# Zach is adding a comment
+a=28
+word = "fun"
