@@ -1,0 +1,55 @@
+month_revenue = clean_month.drop(columns= ["Title","Unnamed: 0","Distributor", "Genre", "Movie Runtime", "License", "Domestic Sales (in $)", "International Sales (in $)"])
+
+plot_pandas= month_revenue.plot.bar(color='b')
+plt.xlabel("month")
+plt.ylabel("revenue (in billions)")
+plt.title("revenue between Jun - Jul and Nov - Jan")
+
+
+cleaned_month_revenue = month_revenue["World Sales (in $)"] = month_revenue['World Sales (in $)'].map("${:,.2f}".format)
+
+
+---------------------------------------
+month_revenue = movie_df.drop(columns = ["Title","Unnamed: 0","Distributor", "Genre", "Movie Runtime", "License", "Domestic Sales (in $)", "International Sales (in $)"])
+
+
+plot_pandas= month_revenue.plot.bar(color='b')
+plt.xlabel("month")
+plt.ylabel("revenue (in Billions)")
+plt.title("revenue by month")
+
+
+movie_df['Release Date']=pd.to_datetime(movie_df['Release Date']).dt.strftime('%Y-%m')
+movie_df['Release Date']=pd.to_datetime(movie_df['Release Date']).dt.strftime('%Y-%m')
+
+clean_month = movie_df.loc[~movie_df.index.month.isin([2, 3, 4, 5, 9, 10])]
+clean_month_df = movie_df.loc[~movie_df.index.month.isin(['2, 3, 4, 5, 9, 10'])]
+
+clean_month_df.head()
+
+-----------------------------------------
+clean_month = movie_df.loc[movie_df.index.isin([2, 3, 4, 5, 9, 10])]
+
+clean_month
+
+summer_movies = movie_df.loc[(movie_df['Release Date'] >= '2013' )]
+
+movie_df['year'] = pd.DatetimeIndex(df['ArrivalDate']).year
+movie_df['month'] = pd.DatetimeIndex(df['ArrivalDate']).month
+
+
+movie_df['Release Date']=pd.to_datetime(movie_df['Release Date'])
+movie_df
+
+movie_df.set_index('Release Date')
+movie_df
+
+
+movie_df['Release Date']=pd.to_datetime(movie_df['Release Date'])
+
+movie_df
+
+
+start_date = '01-01-1977'
+end_date = '05-31-2022'
+
