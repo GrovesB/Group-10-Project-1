@@ -53,3 +53,41 @@ movie_df
 start_date = '01-01-1977'
 end_date = '05-31-2022'
 
+shortlist_df['Release Date'] = pd.to_datetime(shortlist_df['Release Date'])
+shortlist_df.groupby(shortlist_df['Release Date'].dt.to_period('Q'))['Title', 'World Sales (in $)'].max()
+
+shortlist_df.values.tolist()
+print(shortlist_df)
+
+plt.rcParams["figure.figsize"] = (8,5.5)
+shortlist_df.groupby(["Release Date", 'World Sales']).max().plot.bar(color='r')
+plt.xlabel("release date")
+plt.ylabel("revenue")
+plt.title("test")
+
+
+shortlist_df.groupby(shortlist_df['Release Date'].dt.to_period('Q'))[['Title', 'World Sales']].max()
+
+x_axis= shortlist_df.index.values
+y_axis= shortlist_df.values
+
+plt.rcParams["figure.figsize"] = (12,8)
+
+plot_movies=pd.DataFrame({
+    'Release Date': ['shortlist_df["Release Date"]'],
+    'Revenue': ['shortlist_df["World Sales"]'],
+})
+
+ax = plot_movies.plot(x="Release Date", y="Revenue", kind="bar")
+
+shortlist_df['Title']= shortlist_df['Title'].astype('int64')
+
+
+
+
+
+grouped.get_group('1/1/2009')
+
+
+shortlist_df['Release Date'] = pd.to_datetime(shortlist_df['Release Date'])
+print(shortlist_df)
